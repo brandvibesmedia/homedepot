@@ -1,0 +1,52 @@
+@mixin clear() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* PREFIXER */
+@mixin prefixer($props, $browsers: webkit moz ms o) {
+  @each $prop, $value in $props {
+    @if $browsers {
+      @each $browser in $browsers {
+        #{"-" + $browser + "-" + $prop}: #{$value};
+      }
+    }
+    #{$prop}: #{$value};
+  }
+}
+
+/* CSS3 properties */
+@mixin border-radius($rad) {
+  @include prefixer((border-radius: $rad), webkit moz ms);
+}
+
+/* CSS3 animations */
+@mixin transitions($sec) {
+  @include prefixer((transition: ($sec)), webkit moz);
+}
+
+@mixin transform($x, $y) {
+  @include prefixer((transform: translate($x, $y)), webkit moz ms);
+}
+
+@mixin rotateX($x) {
+  @include prefixer((transform: rotateX($x)), webkit moz);
+}
+
+@mixin transform-style($style) {
+  @include prefixer((transform-style: $style), webkit moz);
+}
+
+@mixin transform-origin($origin) {
+  @include prefixer((transform-origin: $origin), webkit moz);
+}
+
+@mixin backface() {
+  @include prefixer((backface-visibility: hidden), webkit moz);
+}

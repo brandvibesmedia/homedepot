@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700&subset=latin-ext');
+@import "_mixins";
+@import "_vars";
+@import "_structure";
+@import "_modal";
+
+.wrapper {
+  padding: 4rem 2rem;
+}
+
+.converter {
+  width:   20rem;
+  margin:  0 auto;
+  border:  .5rem solid darken($color-light, 5%);
+  padding: 2rem;
+  h2 {
+    padding-top: 0rem;
+  }
+}
+
+.converter-form:first-child {
+  margin-bottom: 2rem;
+}
+
+.converter-form_groups {
+  input {
+    width: 55%;
+    float: left;
+  }
+  select {
+    width: 30%;
+    float: right;
+  }
+  @include clear;
+}
+
+.converter-footer {
+  padding-top: 1rem;
+  text-align:  right;
+}
+
+/* RESPONSIVE (for tablets and mobiles) */
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 1rem 1rem;
+  }
+  .converter {
+    width: auto;
+  }
+  .converter-form_groups {
+    input {
+      width:         90%;
+      float:         none;
+      margin-bottom: 1rem;
+    }
+    select {
+      width: 100%;
+      float: none;
+    }
+  }
+}
+
