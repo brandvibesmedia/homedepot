@@ -2,7 +2,7 @@
 Please install using npm install and then run Gulp. The application is running on http://localhost:9080/
 
 # Or use:
-(https://brandvibesmedia.github.io/homedepot/)https://brandvibesmedia.github.io/homedepot/
+[https://brandvibesmedia.github.io/homedepot/]https://brandvibesmedia.github.io/homedepot/
 
 # Next Steps: 
 - Saving user choice of currencies in cookies to show those currencies in one's next visit
