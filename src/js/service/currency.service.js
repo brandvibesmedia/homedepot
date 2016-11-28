@@ -17,7 +17,7 @@ serviceModule.factory( "ccService", ['$q', '$timeout', '$http',
             };
 
             conv_data = $timeout( function() {
-                return $http.get( 'http://api.fixer.io/latest?base=' + req.fromCur + '&symbols=' + req.toCur );
+                return $http.get( 'https://api.fixer.io/latest?base=' + req.fromCur + '&symbols=' + req.toCur );
             }, 100 );
 
             var calc_data = conv_data.then( function(result) {

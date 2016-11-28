@@ -22,7 +22,6 @@ ccModule.controller( 'CurrencyCtrl', ['$scope', '$timeout', 'ccService',
 
 
         $scope.update = function() {
-            console.log('bla');
             convert();
         };
 
