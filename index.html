@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="cc" data-ng-strictdi>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Test application for Home Depot">
+    <meta name="author" content="Nika Hurynovich">
+
+    <title>Currency Converter Test for HomeDepot</title>
+    <link rel="stylesheet" href="css/css.min.css">
+</head>
+<body>
+
+<div class="wrapper" data-ng-controller="CurrencyCtrl" role="main">
+    <div class="converter" aria-labelledby="CurrencyConverterForm">
+
+        <h2>Currency Converter</h2>
+
+        <form name="ccForm" role="form">
+
+            <div class="converter-form converter-form_input">
+
+                <p>
+                    <label for="f-inputAmount">Type in amount and select the currency:</label>
+                </p>
+
+                <div class="converter-form_groups">
+
+                    <input type="number" min="0.01" step="0.01" id="f-inputAmount" placeholder="Amount" role="textbox"
+                           data-ng-model="formObj.fromAmount" data-ng-change="update()">
+
+                    <label class="hidden" id="fl-inputCurrency" for="f-inputCurrency">Select original currency:</label>
+
+                    <select id="f-inputCurrency" role="listbox" aria-labelledby="fl-inputCurrency"
+                            data-ng-model="formObj.fromCur" data-ng-change="update()">
+                        <option value="CAD">CAD</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="converter-form converter-form_output">
+                <p>
+                    <label for="f-outputAmount">Converted amount:</label>
+                </p>
+                <div class="converter-form_groups">
+
+                    <input type="text" disabled="disabled" id="f-outputAmount" placeholder="Amount" role="textbox"
+                           data-ng-model="formObj.toAmount">
+
+                    <label class="hidden" id="fl-outputCurrency" for="f-outputCurrency">Select converted currency:</label>
+
+                    <select id="f-outputCurrency" role="listbox" aria-labelledby="fl-outputCurrency"
+                            data-ng-model="formObj.toCur" data-ng-change="update()">
+                        <option value="CAD">CAD</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
+
+
+        <div class="converter-footer" role="footer">
+            <a href="javascript:void(0)" role="link" aria-controls="modal-disclaimer" data-ng-click="toggleModal(!switcher)">Disclaimer</a>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-disclaimer" aria-haspopup="dialog">
+        <div class="modal-window" tabindex="-1" role="dialog" aria-expanded="{{switcher}}">
+
+            <div class="modal-window_header">
+                <button type="button" class="close" aria-label="Close" aria-controls="modal-disclaimer" role="button" data-ng-click="toggleModal(!switcher)">
+                    <span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" role="heading">Disclaimer</h3>
+            </div>
+            <div class="modal-window_body" role="note">
+                <p>
+                    Lorem ipsum dolor sit amet, imperdiet mauris, consectetuer eros integer quam morbi volutpat, suspendisse porttitor justo arcu integer, sem officia penatibus cursus. Neque suscipit amet ad augue, vel mauris pede. A ut ultrices tincidunt pellentesque vitae. Urna vestibulum eu tortor justo praesent molestie, leo nisl, dolor ligula praesent ante a, aliquam non magnis enim donec malesuada ullamcorper. Turpis consequat. Egestas nonummy at lorem nec suscipit euismod, augue lacinia malesuada mauris donec, non feugiat. Ultricies vel. Et congue dui condimentum nam, wisi semper vivamus odio, in consectetuer phasellus et magna quam, dui quam nunc vehicula aliquam, lacus netus integer etiam at conubia.</p>
+                <p>
+                    Proin libero a congue ante erat. Sed mauris elit augue mi ut eget, enim enim viverra pulvinar varius nibh. Voluptatem fusce libero pellentesque ut eu a, aliquam id quis auctor, pede tempor torquent dolor turpis luctus. Vitae ullamcorper libero sapien laudantium, vestibulum turpis praesent amet consectetuer, elit pede, torquent sit tortor sed. Venenatis sed eros natoque sed. Tellus ac sed eu, quisque turpis nulla enim imperdiet sociosqu, sed placerat. Et laboris. Nullam aenean. Venenatis orci venenatis posuere, dui id, parturient phasellus, pulvinar suspendisse excepteur ut quis id, est pellentesque sodales adipiscing augue. Quam molestie et phasellus est rhoncus lectus, amet sociis, ac eget praesent sed eget. Amet litora adipiscing metus erat vel, mi sollicitudin aenean. Vitae ipsum.</p>
+                <p>
+                    Tellus imperdiet commodo, eros tincidunt commodo a diam ut mollis. Neque suspendisse viverra sed inceptos, aenean nec, donec nibh pretium sit penatibus eros, phasellus eros, sit quam ligula ac. Curabitur amet facilisis quia, ac risus leo malesuada posuere tellus fusce, sollicitudin penatibus feugiat tincidunt eget nec. Non aenean, lacinia sed mauris vitae suspendisse maecenas, wisi quam aliquam nec. Urna integer consectetuer justo dignissim viverra. Enim nunc id ante nunc nunc varius, cras ut vitae montes magnis tellus wisi, purus lacus. Id fugiat non quis suscipit. Morbi enim suscipit, suspendisse sed nunc iaculis massa volutpat, nulla sed sodales malesuada eaque, wisi eum arcu purus pretium, morbi sed eget sed quisque tristique.</p>
+                <p>
+                    Cras molestie, id rhoncus, in tristique lectus duis. At pellentesque, cum viverra. Felis curabitur euismod luctus pellentesque, fusce aliquam nec. Libero purus cursus aliquam iaculis, vivamus lacus mauris adipiscing tincidunt. Eu sed a praesent ac, in mus vivamus fermentum tempor.</p>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="modal-overlay" aria-hidden="true"></div>
+</div>
+
+</div>
+
+<script src="js/jslib.js"></script>
+<script src="js/jsapp.js"></script>
+
+</body>
+</html>
