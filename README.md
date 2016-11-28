@@ -1,5 +1,5 @@
 # Currency Converter App
-Please install using npm install and then run Gulp. The application is running on http://localhost:9080/
+Please install using npm install and then run Gulp. The application is running on [http://localhost:9080/](http://localhost:9080/)
 
 # Or use:
 [https://brandvibesmedia.github.io/homedepot/](https://brandvibesmedia.github.io/homedepot/)
